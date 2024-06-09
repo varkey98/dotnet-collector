@@ -9,7 +9,7 @@ class TraceService : TraceServiceBase
     public override Task<ExportTraceServiceResponse> Export(ExportTraceServiceRequest request, ServerCallContext context)
     {
 
-        foreach(var span in request.ResourceSpans)
+        foreach (var span in request.ResourceSpans)
         {
             Console.WriteLine(span.ToString());
         }

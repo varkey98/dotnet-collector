@@ -13,20 +13,13 @@
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
+        <PackageReference Include="Opentelemetry" Version="1.8.1" />
     </ItemGroup>
 
     <ItemGroup>
-        <Protobuf Include="proto/opentelemetry-proto/opentelemetry/proto/common/v1/common.proto" 
-                  GrpcServices="None" 
-                  ProtoRoot="proto/opentelemetry-proto"/>
-        <Protobuf Include="proto/opentelemetry-proto/opentelemetry/proto/resource/v1/resource.proto" 
-                  GrpcServices="None" 
-                  ProtoRoot="proto/opentelemetry-proto"/>
-        <Protobuf Include="proto/opentelemetry-proto/opentelemetry/proto/trace/v1/trace.proto" 
-                  GrpcServices="None" 
-                  ProtoRoot="proto/opentelemetry-proto"/>
-        <Protobuf Include="proto/opentelemetry-proto/opentelemetry/proto/collector/trace/v1/trace_service.proto" 
-                  GrpcServices="Server" 
-                  ProtoRoot="proto/opentelemetry-proto"/>
+        <Protobuf Include="proto/opentelemetry-proto/opentelemetry/proto/common/v1/common.proto" GrpcServices="None" ProtoRoot="proto/opentelemetry-proto" />
+        <Protobuf Include="proto/opentelemetry-proto/opentelemetry/proto/resource/v1/resource.proto" GrpcServices="None" ProtoRoot="proto/opentelemetry-proto" />
+        <Protobuf Include="proto/opentelemetry-proto/opentelemetry/proto/trace/v1/trace.proto" GrpcServices="None" ProtoRoot="proto/opentelemetry-proto" />
+        <Protobuf Include="proto/opentelemetry-proto/opentelemetry/proto/collector/trace/v1/trace_service.proto" GrpcServices="Server" ProtoRoot="proto/opentelemetry-proto" />
     </ItemGroup>
 </Project>
