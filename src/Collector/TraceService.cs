@@ -13,6 +13,7 @@ class TraceService : TraceServiceBase
         {
             Console.WriteLine(span.ToString());
         }
+
         return Task.FromResult(new ExportTraceServiceResponse());
     }
 }
