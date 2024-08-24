@@ -1,4 +1,4 @@
-using OpentelemetryDotnetCollector.Service;
+using DotnetCollector.Collector;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 
 

@@ -2,7 +2,7 @@ using Grpc.Core;
 using OpenTelemetry.Proto.Collector.Trace.V1;
 using static OpenTelemetry.Proto.Collector.Trace.V1.TraceService;
 
-namespace OpentelemetryDotnetCollector.Service;
+namespace DotnetCollector.Collector;
 
 class TraceService : TraceServiceBase
 {
