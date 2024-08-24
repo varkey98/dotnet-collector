@@ -36,20 +36,20 @@ public class TestingProcessor(TestingProcessorConfig cfg) : BaseProcessor<Resour
             }
         }
 
-        if(Cfg.SpanAttributes != null)
+        if (Cfg.SpanAttributes != null)
         {
-            foreach(var scopedSpans in data.ScopeSpans)
+            foreach (var scopedSpans in data.ScopeSpans)
             {
                 // update total spans processed counter
                 TotalSpansProcessed.Add(scopedSpans.Spans.Count);
 
                 // dont do span evaluation in case resource attributes didnt match
-                if(evalFailed)
+                if (evalFailed)
                 {
                     continue;
                 }
 
-                foreach(var span in scopedSpans.Spans)
+                foreach (var span in scopedSpans.Spans)
                 {
                     var spanAttrs = span.Attributes;
                     Dictionary<string, AnyValue> matchedAttrs = ProcessorUtils.GetMatchingKeys(spanAttrs, Cfg.SpanAttributes);
@@ -72,7 +72,7 @@ public class TestingProcessor(TestingProcessorConfig cfg) : BaseProcessor<Resour
                     // this span succeeded the evaluation
                     TotalSpansSucceeded.Add(1);
                 }
-      
+
             }
         }
     }

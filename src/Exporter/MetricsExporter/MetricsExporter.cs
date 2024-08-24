@@ -17,7 +17,7 @@ public class MetricsExporterBuilder
     {
         Cfg = cfg;
 
-        if(cfg.Enabled)
+        if (cfg.Enabled)
         {
             MpBuilder = Sdk.CreateMeterProviderBuilder()
                 .SetResourceBuilder(
@@ -25,12 +25,13 @@ public class MetricsExporterBuilder
                         .CreateDefault()
                         .AddService(Cfg.ServiceName, Version.ToString())
                 )
-            .AddOtlpExporter((opts, metricReaderOpts) => {
-                        opts.Endpoint = new Uri(cfg.Endpoint);
-                        opts.Protocol = OpenTelemetry.Exporter.OtlpExportProtocol.Grpc;
-                        metricReaderOpts
-                            .PeriodicExportingMetricReaderOptions
-                            .ExportIntervalMilliseconds = 60000;
+            .AddOtlpExporter((opts, metricReaderOpts) =>
+            {
+                opts.Endpoint = new Uri(cfg.Endpoint);
+                opts.Protocol = OpenTelemetry.Exporter.OtlpExportProtocol.Grpc;
+                metricReaderOpts
+                    .PeriodicExportingMetricReaderOptions
+                    .ExportIntervalMilliseconds = 60000;
             });
         }
     }
@@ -43,11 +44,11 @@ public class MetricsExporterBuilder
 
     public MetricsExporterBuilder AddSources(string[] names)
     {
-        foreach(var name in names)
+        foreach (var name in names)
         {
             MpBuilder?.AddMeter(name);
         }
-                return this;
+        return this;
     }
 
     public void Build()

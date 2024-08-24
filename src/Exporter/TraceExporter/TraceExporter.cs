@@ -9,7 +9,7 @@ public class TraceExporter
     public TraceExporter(TraceExporterConfig cfg)
     {
         Cfg = cfg;
-        GrpcChannelOptions channelOpts = new() 
+        GrpcChannelOptions channelOpts = new()
         {
             Credentials = Grpc.Core.ChannelCredentials.Insecure
         };
